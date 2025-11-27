@@ -14,6 +14,6 @@ This is our first blog post. The name "Bhoologam" (ഭൂലോകം) means "Ea
 ## What We'll Cover
 
 - 🌊 Marine Science
-- 🌍 Earth Science
+- 🌍 Earth Science..
 
 Stay tuned for more exciting science content!
