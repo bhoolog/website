@@ -4,7 +4,7 @@ author: Dr. Anoop t. R.
 date: 2025-11-25
 excerpt: എന്താണ് കള്ളക്കടൽ? അത് എന്തുകൊണ്ടാണ് കേരളതീരത്ത് മാത്രം ഉണ്ടാകുന്നത്? എന്തുകൊണ്ട് മറ്റു സ്ഥലങ്ങളിൽ ഇത് സംഭവിക്കുന്നതായി ആരും പറയുന്നത് കേൾക്കുന്നില്ല? ഇങ്ങനെ ഒരുപാട് ചോദ്യങ്ങൾക്ക് ഉത്തരം തേടുന്നു.
 category: Oceanography / Coastal Processes
-image: ./assets/images/posts/swell-wave.png
+image: ../assets/images/posts/swell-wave.png
 readTime: 10
 ---
 
@@ -73,4 +73,5 @@ Remya, P. G., Vishnu, S., Praveen Kumar, B., Balakrishnan Nair, T. M., & Rohith,
 Krishna, P. S., Tiju, V. I., Nair, L. S., & Ramesh, M. (2023). Coastal flooding by wave, wind, tide interactions and related processes along the southern part of SW coast of India. Regional Studies in Marine Science, 62, 102968.
 https://www.newindianexpress.com/cities/thiruvananthapuram/2012/Sep/04/sea-erosion-and-wave-of-panic-along-coastal-areas-402880.html >>>
 Gupta, G. V. M., Sudheesh, V., Sudharma, K. V., Saravanane, N., Dhanya, V., Dhanya, K. R., … & Naqvi, S. W. A. (2016). Evolution to decay of upwelling and associated biogeochemistry over the southeastern Arabian Sea shelf. Journal of Geophysical Research: Biogeosciences, 121(1), 159-175.`
+
 
