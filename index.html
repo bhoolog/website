@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bhoologam - A popular science blog exploring the wonders of our world">
+    <title>Bhoologam - Science Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #757575;
+            --accent-color: #0066cc;
+            --bg-color: #ffffff;
+            --card-bg: #f9f9f9;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--primary-color);
+            background: var(--bg-color);
+        }
+
+        /* Header Styles */
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: var(--bg-color);
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .lang-switch {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Hero/Featured Section */
+        .hero {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .featured-article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .featured-content h1 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .featured-content .excerpt {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .author {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+        }
+
+        .read-more:hover {
+            opacity: 0.85;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-pills {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .category-pill {
+            padding: 8px 18px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .category-pill:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Recent Posts */
+        .recent-posts {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .post-card {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .post-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+
+        .post-card h3 {
+            font-size: 20px;
+            line-height: 1.3;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .post-card .excerpt {
+            font-size: 15px;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .footer-section p {
+            color: var(--secondary-color);
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--secondary-color);
+            font-size: 14px;
+        }
+
+        /* Blog Post Template */
+        .blog-post {
+            max-width: 740px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .post-header {
+            margin-bottom: 40px;
+        }
+
+        .post-title {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--card-bg);
+        }
+
+        .post-content {
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 60px;
+        }
+
+        .post-content h2 {
+            font-size: 32px;
+            margin: 40px 0 20px;
+            font-weight: 600;
+        }
+
+        .post-content h3 {
+            font-size: 26px;
+            margin: 32px 0 16px;
+            font-weight: 600;
+        }
+
+        .post-content p {
+            margin-bottom: 24px;
+        }
+
+        .post-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 32px 0;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 24px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--secondary-color);
+        }
+
+        .post-content code {
+            background: var(--card-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+        }
+
+        .post-content pre {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+
+        .post-content ul, .post-content ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        .post-content li {
+            margin-bottom: 8px;
+        }
+
+        .media-embed {
+            margin: 40px 0;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Comments Section */
+        .comments-section {
+            max-width: 740px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .comments-section h3 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .comment-placeholder {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 4px;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            .featured-article {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-image {
+                height: 250px;
+            }
+
+            .featured-content h1 {
+                font-size: 32px;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .post-title {
+                font-size: 36px;
+            }
+
+            .post-content {
+                font-size: 18px;
+            }
+        }
+
+        /* Page Toggle */
+        .page-home { display: block; }
+        .page-post { display: none; }
+        
+        body.show-post .page-home { display: none; }
+        body.show-post .page-post { display: block; }
+    </style>
+</head>
+<body>
+    <!-- Marked.js library for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js"></script>
+    
+    <!-- Your custom JavaScript -->
+    <script>
+        // Configuration
+        const GITHUB_USER = 'bhoolog';
+        const GITHUB_REPO = 'website';
+        const GITHUB_BRANCH = 'main';
+        const POSTS_FOLDER = 'posts';
+    </script>
+    <!-- HOME PAGE -->
+    <div class="page-home">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <a href="#" class="logo" onclick="showHome(); return false;">Bhoologam</a>
+                    <nav>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#categories">Categories</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><button class="lang-switch" onclick="toggleLanguage()">മലയാളം</button></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Featured Article -->
+        <section class="hero">
+            <div class="container">
+                <div class="featured-article">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop" alt="Earth from space" class="featured-image">
+                    </div>
+                    <div class="featured-content">
+                        <h1>The Hidden Wonders of Deep Ocean Ecosystems</h1>
+                        <p class="excerpt">Discover the mysterious life forms thriving in the darkest depths of our oceans, where sunlight never reaches and pressure is immense.</p>
+                        <div class="meta">
+                            <span class="author">Dr. Ananya Krishnan</span>
+                            <span>•</span>
+                            <span>November 25, 2025</span>
+                            <span>•</span>
+                            <span>8 min read</span>
+                        </div>
+                        <a href="#" class="read-more" onclick="showPost(); return false;">Read Article</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <div class="container">
+                <div class="category-pills">
+                    <a href="#" class="category-pill">Space Science</a>
+                    <a href="#" class="category-pill">Marine Biology</a>
+                    <a href="#" class="category-pill">Climate Change</a>
+                    <a href="#" class="category-pill">Quantum Physics</a>
+                    <a href="#" class="category-pill">Biotechnology</a>
+                    <a href="#" class="category-pill">Astronomy</a>
+                    <a href="#" class="category-pill">Environmental Science</a>
+                    <a href="#" class="category-pill">Neuroscience</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Posts -->
+        <section class="recent-posts">
+            <div class="container">
+                <h2 class="section-title">Recent Articles</h2>
+                <div class="posts-grid">
+                    <a href="#" class="post-card" onclick="showPost(); return false;">
+                        <img src="https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?w=400&h=250&fit=crop" alt="Quantum Computing" class="post-thumbnail">
+                        <div class="meta">
+                            <span class="author">Rajesh Kumar</span>
+                            <span>•</span>
+                            <span>Nov 20</span>
+                        </div>
+                        <h3>Quantum Computing: Breaking the Classical Barriers</h3>
+                        <p class="excerpt">How quantum computers are revolutionizing computation and what it means for the future of technology.</p>
+                    </a>
+
+                    <a href="#" class="post-card" onclick="showPost(); return false;">
+                        <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=400&h=250&fit=crop" alt="Milky Way" class="post-thumbnail">
+                        <div class="meta">
+                            <span class="author">Priya Menon</span>
+                            <span>•</span>
+                            <span>Nov 18</span>
+                        </div>
+                        <h3>Mapping the Milky Way: New Discoveries</h3>
+                        <p class="excerpt">Recent astronomical findings reveal surprising structures in our home galaxy.</p>
+                    </a>
+
+                    <a href="#" class="post-card" onclick="showPost(); return false;">
+                        <img src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?w=400&h=250&fit=crop" alt="DNA Structure" class="post-thumbnail">
+                        <div class="meta">
+                            <span class="author">Dr. Thomas George</span>
+                            <span>•</span>
+                            <span>Nov 15</span>
+                        </div>
+                        <h3>CRISPR Technology: Editing Life Itself</h3>
+                        <p class="excerpt">The revolutionary gene-editing tool that's transforming medicine and agriculture.</p>
+                    </a>
+
+                    <a href="#" class="post-card" onclick="showPost(); return false;">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=250&fit=crop" alt="Nature" class="post-thumbnail">
+                        <div class="meta">
+                            <span class="author">Maya Nair</span>
+                            <span>•</span>
+                            <span>Nov 12</span>
+                        </div>
+                        <h3>Climate Tipping Points: What We Need to Know</h3>
+                        <p class="excerpt">Understanding the critical thresholds that could drastically alter our planet's climate system.</p>
+                    </a>
+
+                    <a href="#" class="post-card" onclick="showPost(); return false;">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop" alt="Brain scan" class="post-thumbnail">
+                        <div class="meta">
+                            <span class="author">Dr. Arjun Pillai</span>
+                            <span>•</span>
+                            <span>Nov 10</span>
+                        </div>
+                        <h3>Neuroplasticity: How Your Brain Rewires Itself</h3>
+                        <p class="excerpt">Exploring the brain's remarkable ability to adapt and form new neural connections throughout life.</p>
+                    </a>
+
+                    <a href="#" class="post-card" onclick="showPost(); return false;">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="Solar panels" class="post-thumbnail">
+                        <div class="meta">
+                            <span class="author">Kavya Sharma</span>
+                            <span>•</span>
+                            <span>Nov 8</span>
+                        </div>
+                        <h3>The Future of Renewable Energy Storage</h3>
+                        <p class="excerpt">Innovative battery technologies that could solve the intermittency challenge of solar and wind power.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>About Bhoologam</h4>
+                        <p>Exploring the wonders of science and making complex topics accessible to everyone. Join us on a journey through the fascinating world of scientific discovery.</p>
+                        <div class="social-links" style="margin-top: 20px;">
+                            <a href="#" aria-label="Twitter">𝕏</a>
+                            <a href="#" aria-label="Facebook">f</a>
+                            <a href="#" aria-label="Instagram">📷</a>
+                            <a href="#" aria-label="YouTube">▶</a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Categories</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Space Science</a></li>
+                            <li><a href="#">Marine Biology</a></li>
+                            <li><a href="#">Climate Change</a></li>
+                            <li><a href="#">Biotechnology</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Bhoologam. All rights reserved. Made with passion for science.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- BLOG POST TEMPLATE -->
+    <div class="page-post">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <a href="#" class="logo" onclick="showHome(); return false;">Bhoologam</a>
+                    <nav>
+                        <ul>
+                            <li><a href="#" onclick="showHome(); return false;">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#categories">Categories</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><button class="lang-switch" onclick="toggleLanguage()">മലയാളം</button></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Blog Post Content -->
+        <article class="blog-post">
+            <div class="post-header">
+                <h1 class="post-title">The Hidden Wonders of Deep Ocean Ecosystems</h1>
+                <div class="post-meta">
+                    <div class="author-info">
+                        <div class="author-avatar"></div>
+                        <div>
+                            <div class="author">Dr. Ananya Krishnan</div>
+                            <div style="font-size: 14px; color: var(--secondary-color);">Marine Biologist</div>
+                        </div>
+                    </div>
+                    <span>•</span>
+                    <span>November 25, 2025</span>
+                    <span>•</span>
+                    <span>8 min read</span>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop" alt="Deep ocean scene">
+
+                <p>The deep ocean, covering more than 60% of Earth's surface, remains one of the least explored frontiers on our planet. Below 200 meters, sunlight fades to complete darkness, creating an alien world that challenges our understanding of life itself.</p>
+
+                <h2>Life in Extreme Conditions</h2>
+
+                <p>In these lightless depths, organisms have evolved extraordinary adaptations. Bioluminescence—the ability to produce light through chemical reactions—is perhaps the most striking. Over 90% of deep-sea creatures possess this remarkable capability, using it for communication, hunting, and defense.</p>
+
+                <blockquote>
+                    "The deep ocean is Earth's largest habitat, yet we know more about the surface of Mars than we do about what lies beneath our own seas." — Dr. Sylvia Earle, Marine Biologist
+                </blockquote>
+
+                <h3>Hydrothermal Vents: Oases of Life</h3>
+
+                <p>Discovered in 1977, hydrothermal vents represent one of the most significant biological discoveries of the 20th century. These underwater geysers spew superheated, mineral-rich water from Earth's crust, creating unique ecosystems that thrive without sunlight.</p>
+
+                <div class="media-embed">
+                    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=1200&h=600&fit=crop" alt="Hydrothermal vent ecosystem">
+                </div>
+
+                <p>The base of these food chains consists of chemosynthetic bacteria that convert toxic hydrogen sulfide into energy—a process fundamentally different from photosynthesis. This discovery revolutionized our understanding of life's possibilities, both on Earth and potentially on other planets.</p>
+
+                <h3>Pressure and Adaptation</h3>
+
+                <p>At 4,000 meters depth, the pressure reaches over 400 atmospheres—equivalent to having a large elephant balanced on your thumbnail. Yet creatures like the Mariana snailfish thrive at depths exceeding 8,000 meters. Their bodies contain special proteins and cellular structures that prevent collapse under these crushing conditions.</p>
+
+                <h2>The Twilight Zone</h2>
+
+                <p>Between 200 and 1,000 meters lies the mesopelagic zone, or "twilight zone." This layer contains the largest migration on Earth: billions of fish, squid, and crustaceans that ascend each night to feed in surface waters, then descend at dawn. This daily vertical migration transfers enormous amounts of carbon from the surface to the deep ocean.</p>
+
+                <ul>
+                    <li><strong>Lanternfish</strong> — Small bioluminescent fish that make up 65% of deep-sea fish biomass</li>
+                    <li><strong>Giant Squid</strong> — Elusive creatures reaching lengths of 13 meters, only recently filmed in their natural habitat</li>
+                    <li><strong>Vampire Squid</strong> — Despite its name, feeds on marine snow rather than blood</li>
+                    <li><strong>Barreleye Fish</strong> — Possesses transparent head with tubular eyes that can rotate to look upward or forward</li>
+                </ul>
+
+                <h2>Conservation Challenges</h2>
+
+                <p>Despite their remoteness, deep-sea ecosystems face increasing threats. Deep-sea trawling destroys ancient coral forests and sponge gardens. Mining companies eye mineral deposits around hydrothermal vents. Climate change alters ocean chemistry and circulation patterns.</p>
+
+                <p>The slow growth rates and low reproduction of many deep-sea species make recovery from disturbance extremely difficult. Some deep-sea corals can live for thousands of years, but once damaged, may never recover within human timescales.</p>
+
+                <h2>Future Exploration</h2>
+
+                <p>Modern technology is finally allowing us to explore these depths systematically. Autonomous underwater vehicles (AUVs), remotely operated vehicles (ROVs), and new submersibles equipped with high-resolution cameras and sensors are revealing the deep ocean's secrets.</p>
+
+                <div class="media-embed">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <p>Each expedition discovers new species and ecosystems. Scientists estimate that we've explored less than 5% of the ocean floor, suggesting millions of undiscovered species await in the depths.</p>
+
+                <h2>Conclusion</h2>
+
+                <p>The deep ocean reminds us that Earth still holds profound mysteries. These extreme environments challenge our assumptions about life's requirements and expand our imagination about where life might exist elsewhere in the universe. As we continue to explore these hidden realms, we gain not just scientific knowledge, but a deeper appreciation for the extraordinary planet we call home.</p>
+
+                <p>The deep sea teaches us humility and wonder—qualities essential for scientific discovery and environmental stewardship. In protecting these remarkable ecosystems, we preserve not just biodiversity, but the future possibilities of discovery for generations to come.</p>
+            </div>
+        </article>
+
+        <!-- Comments Section -->
+        <section class="comments-section">
+            <h3>Comments</h3>
+            <div class="comment-placeholder">
+                <p>Comments can be integrated using services like Disqus, Utterances (GitHub Issues), or custom solutions.</p>
+            </div>
+        </section>
+
+        <!-- Related Articles -->
+        <section class="related-articles">
+            <div class="container">
+                <h2 class="section-title">Related Articles</h2>
+                <div class="posts-grid">
+                    <a href="#" class="post-card">
+                        <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=250&fit=crop" alt="Coral reef" class="post-thumbnail">
+                        <div class="meta">
+                            <span class="author">Dr. Sarah Johnson</span>
+                            <span>•</span>
+                            <span>Nov 22</span>
+                        </div>
+                        <h3>Coral Reefs: The Rainforests of the Sea</h3>
+                        <p class="excerpt">Exploring the incredible biodiversity and ecological importance of coral reef ecosystems.</p>
+                    </a>
+
+                    <a href="#" class="post-card">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=250&fit=crop" alt="Ocean waves" class="post-thumbnail">
+                        <div class="meta">
+                            <span class="author">James Rodriguez</span>
+                            <span>•</span>
+                            <span>Nov 19</span>
+                        </div>
+                        <h3>Ocean Currents and Climate Regulation</h3>
+                        <p class
