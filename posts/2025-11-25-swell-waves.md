@@ -14,7 +14,7 @@ readTime: 10
 
 എന്നാൽ, ഈ ദുരന്തങ്ങളുടെ ഒരു പ്രത്യേകത, അവ ഏറിയോ കുറഞ്ഞോ ലോകത്തിന്റെ പല ഭാഗങ്ങളിലും ഇന്ത്യയുടെ മറ്റു തീരപ്രദേശങ്ങളിലും സംഭവിക്കാറുണ്ട് എന്നതാണ്. പക്ഷേ, മറ്റു സ്ഥലങ്ങളിൽ അധികം കേൾക്കാത്തതും നമ്മുടെ വാർത്താമാധ്യമങ്ങൾ വളരെ പ്രാധാന്യത്തോടെ റിപ്പോർട്ട് ചെയ്യുന്നതുമായ ഒരു പ്രതിഭാസമാണ് കേരളതീരത്തെ കള്ളക്കടൽ. കടലുമായി ബന്ധപ്പെട്ട ദുരന്തങ്ങളുടെ മുന്നറിയിപ്പുകളും മറ്റു സേവനങ്ങളും നൽകുന്ന ഹൈദരാബാദിലെ ഇൻകോയിസ് (INCOIS), കേരളതീരത്തെ കള്ളക്കടലിനെക്കുറിച്ച് പ്രത്യേക മുന്നറിയിപ്പ്ക്കുറിപ്പുകൾ ഇറക്കാറുണ്ട്. ഇതിൽ നിന്ന് തന്നെ അത് എത്രത്തോളം പ്രാധാന്യം അർഹിക്കുന്നത് ആണെന്ന് മനസ്സിലാക്കാമല്ലോ. 
 
-![swell-waves](./assets/images/posts/swell-wave.png)
+![swell-waves](../assets/images/posts/swell-wave.png)
 
 `എന്നാൽ, എന്താണ് കള്ളക്കടൽ? അത് എന്തുകൊണ്ടാണ് കേരളതീരത്ത് മാത്രം ഉണ്ടാകുന്നത്? എന്തുകൊണ്ട് മറ്റു സ്ഥലങ്ങളിൽ ഇത് സംഭവിക്കുന്നതായി ആരും പറയുന്നത് കേൾക്കുന്നില്ല? ഇങ്ങനെ ഒരുപാട് ചോദ്യങ്ങൾ ഉണ്ട്. ഇവയിൽ പലതിനും ഇന്നും പൂർണമായ വിശദീകരണം കണ്ടെത്തിയിട്ടുമില്ല. ഇതുവരെ പല ഗവേഷകരും കള്ളക്കടലിനെക്കുറിച്ച് ധാരാളം പഠനങ്ങൾ നടത്തിയിട്ടുണ്ട്. അവയെന്തൊക്കെയാണെന്നും, അതിലൂടെ നമുക്ക് ലഭിച്ച അറിവുകൾ എന്തൊക്കെയാണെന്നും നമുക്ക് നോക്കാം. `
 
@@ -73,3 +73,4 @@ Remya, P. G., Vishnu, S., Praveen Kumar, B., Balakrishnan Nair, T. M., & Rohith,
 Krishna, P. S., Tiju, V. I., Nair, L. S., & Ramesh, M. (2023). Coastal flooding by wave, wind, tide interactions and related processes along the southern part of SW coast of India. Regional Studies in Marine Science, 62, 102968.
 https://www.newindianexpress.com/cities/thiruvananthapuram/2012/Sep/04/sea-erosion-and-wave-of-panic-along-coastal-areas-402880.html >>>
 Gupta, G. V. M., Sudheesh, V., Sudharma, K. V., Saravanane, N., Dhanya, V., Dhanya, K. R., … & Naqvi, S. W. A. (2016). Evolution to decay of upwelling and associated biogeochemistry over the southeastern Arabian Sea shelf. Journal of Geophysical Research: Biogeosciences, 121(1), 159-175.`
+
